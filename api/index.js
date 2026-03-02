@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import userRoutes from "../routes/userRoutes.js"; 
 
 const app = express();
 
@@ -9,5 +10,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({ message: "Backend running 🚀" });
 });
+
+app.use("/api", userRoutes);
 
 export default app;
